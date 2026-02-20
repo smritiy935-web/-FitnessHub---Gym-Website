@@ -1,0 +1,505 @@
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'Roboto', sans-serif;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* --- TYPOGRAPHY --- */
+        h1, h2, h3 {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+        }
+
+        .section-number {
+            font-family: 'Oswald', sans-serif;
+            font-size: 8rem;
+            color: transparent;
+            -webkit-text-stroke: 2px white;
+            opacity: 0.5;
+            position: absolute;
+            top: -60px;
+            right: 0;
+            z-index: 0;
+            line-height: 1;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        /* --- BUTTONS --- */
+        .btn {
+            display: inline-block;
+            background-color:  #FCEE09;
+            color: #000000;
+            padding: 12px 30px;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: white;
+        }
+
+        /* --- HEADER / NAV --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            position: absolute;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            background: transparent;
+        }
+
+        .logo {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            font-style: italic;
+            border-bottom: 3px solid #FCEE09;
+            line-height: 1;
+            padding-bottom: 5px;
+        }
+
+        .logo span {
+            color: #FCEE09;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        /* --- RIGHT SIDEBAR (Fixed) --- */
+        .sidebar {
+            position: fixed;
+            right: 40px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            z-index: 999;
+        }
+
+        .sidebar .page-num {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.2rem;
+        }
+
+        .sidebar .line {
+            width: 2px;
+            height: 100px;
+            background-color: #FCEE09;
+        }
+
+        .sidebar .socials i {
+            display: block;
+            margin: 15px 0;
+            font-size: 1.2rem;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* --- HERO SECTION --- */
+        #hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            padding-left: 10%;
+            position: relative;
+        }
+
+        .hero-content {
+            margin-top: 10vh;
+            max-width: 600px;
+        }
+
+        .hero-content h1 {
+            font-size: 5rem;
+            line-height: 0.9;
+            margin-bottom: 20px;
+        }
+
+        .hero-content h1 span {
+            color: #FCEE09;
+        }
+
+        /* --- SECTION 01: WHO WE ARE --- */
+        #who-we-are {
+            display: flex;
+            padding: 100px 10%;
+            gap: 50px;
+            position: relative;
+            background-color: #000000;
+            align-items: center;
+        }
+
+        .who-img {
+            flex: 1;
+            height: 400px;
+            background-image: url('https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+            /* Weights image */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .who-text {
+            flex: 1;
+            position: relative;
+        }
+
+        .who-text p {
+            margin-bottom: 20px;
+            line-height: 1.6;
+            color: #ddd;
+        }
+
+        /* --- SECTION 02: MEET THE TEAM --- */
+        #team {
+            padding: 100px 5%;
+            position: relative;
+            text-align: center;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 50px;
+        }
+
+        .team-member {
+            height: 350px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            cursor: pointer;
+            filter: grayscale(20%);
+            transition: 0.3s;
+        }
+
+        .team-member:hover {
+            filter: grayscale(0%);
+            transform: scale(1.02);
+            z-index: 10;
+        }
+
+        /* Placeholder Images for Team */
+        .tm1 {
+            background-image: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80');
+        }
+
+        .tm2 {
+            background-image: url('https://images.unsplash.com/photo-1595078475328-1ab05d0a6a0e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80');
+        }
+
+        .tm3 {
+            background-image: url('https://images.unsplash.com/photo-1483721310020-03333e577078?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80');
+        }
+
+        .tm4 {
+            background-image: url('https://images.unsplash.com/photo-1548690312-e3b507d8c110?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80');
+        }
+
+        .tm5 {
+            background-image: url('https://images.unsplash.com/photo-1517963879433-6ad2b056d712?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80');
+        }
+
+        .tm6 {
+            background-image: url('https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80');
+        }
+
+        .tm7 {
+            background-image: url('https://images.unsplash.com/photo-1518310383802-640c2de311b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80');
+        }
+
+        .tm8 {
+            background-image: url('https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80');
+        }
+
+
+        /* --- SECTION 03: FEATURED CLASSES --- */
+        #classes {
+            padding: 100px 10%;
+            position: relative;
+        }
+
+        .classes-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .class-card {
+            flex: 1;
+            height: 500px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 30px;
+        }
+
+        /* Dark overlay gradient on cards */
+        .class-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent 40%, black 100%);
+        }
+
+        .class-card h3,
+        .class-card .btn {
+            position: relative;
+            z-index: 2;
+        }
+
+        .class-card h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .c-img-1 {
+            background-image: url('https://images.unsplash.com/photo-1532384748853-8f54a8f476e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+        }
+
+        .c-img-2 {
+            background-image: url('https://images.unsplash.com/photo-1574680096145-d05b474e2155?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+        }
+
+
+        /* --- SECTION 04: MEMBERSHIPS --- */
+        #memberships {
+            padding: 100px 10%;
+            position: relative;
+            text-align: center;
+            background-color: #000000;
+        }
+
+        .membership-container {
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            /* Cards touch each other */
+            margin-top: 50px;
+        }
+
+        .mem-card {
+            background-color: #808080;
+            padding: 60px 40px;
+            width: 350px;
+            text-align: left;
+            position: relative;
+            color: #000;
+        }
+
+        .mem-card.middle {
+            background-color: #fff;
+            transform: scale(1.05);
+            z-index: 5;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .mem-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .icon-box {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .price {
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 30px;
+            font-family: 'Oswald', sans-serif;
+        }
+
+        .mem-features li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .mem-features li i {
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .mem-card .btn {
+            width: 100%;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #FCEE09;
+            color: #000000;
+            padding: 60px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .footer-left {
+            display: flex;
+            gap: 80px;
+        }
+
+        .footer-info p {
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .footer-links p {
+            margin-bottom: 8px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .footer-links p:hover {
+            text-decoration: underline;
+        }
+
+        .footer-right h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .subscribe-form {
+            display: flex;
+        }
+
+        .subscribe-form input {
+            padding: 15px;
+            border: 2px solid black;
+            width: 300px;
+        }
+
+        .subscribe-form button {
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* --- DECORATIVE DIAGONAL YELLOW STRIPES --- */
+        
+        .angle-bg-left {
+            position: absolute;
+            left: 0;
+            bottom: -50px;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to right bottom, transparent 50%, #FCEE09 50%);
+            z-index: -1;
+            display: none;
+          
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 1024px) {
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .membership-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .mem-card {
+                width: 100%;
+                max-width: 400px;
+            }
+
+            .mem-card.middle {
+                transform: none;
+            }
+
+            #who-we-are {
+                flex-direction: column;
+            }
+
+            .hero-content h1 {
+                
+                font-size: 3.5rem;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .sidebar {
+                display: none;
+            }
+
+            header {
+                padding: 20px;
+            }
+
+            nav {
+                display: none;
+            }
+        }
