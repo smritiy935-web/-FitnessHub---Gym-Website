@@ -5,21 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Journey London - CrossFit Gym</title>
+
     <link rel="stylesheet" href="style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link
         href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&family=Roboto:wght@300;400;700&display=swap"
         rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-    
-</head>
 
+</head>
 <body>
 
+    <!-- Desktop fixed sidebar (hidden on mobile via media query) -->
     <div class="sidebar">
         <span class="page-num">01</span>
         <div class="line"></div>
@@ -31,9 +34,10 @@
         </div>
     </div>
 
+    <!-- Header with desktop nav + mobile hamburger -->
     <header>
         <div class="logo">JOURNEY <span>LONDON</span></div>
-        <nav>
+        <nav class="desktop-nav">
             <ul>
                 <li><a href="#">HOME</a></li>
                 <li><a href="#who-we-are">WHO WE ARE</a></li>
@@ -43,21 +47,41 @@
             </ul>
         </nav>
         <a href="#footer" class="btn">CONTACT</a>
+        <div class="mobile-menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </div>
     </header>
 
+    <!-- Mobile side navigation (slide-in) -->
+    <div class="mobile-side-nav" id="mobileSideNav">
+        <div class="close-btn" id="closeMenuBtn"><i class="fas fa-times"></i></div>
+        <ul>
+            <li><a href="#" id="mobileHomeLink">HOME</a></li>
+            <li><a href="#who-we-are" id="mobileWhoLink">WHO WE ARE</a></li>
+            <li><a href="#team" id="mobileTeamLink">MEET THE TEAM</a></li>
+            <li><a href="#classes" id="mobileClassesLink">CLASSES</a></li>
+            <li><a href="#memberships" id="mobileMembershipsLink">MEMBERSHIPS</a></li>
+            <li><a href="#footer" id="mobileContactLink">CONTACT</a></li>
+        </ul>
+        <div class="socials-mobile">
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-instagram"></i>
+        </div>
+    </div>
+    <!-- Overlay when menu is open -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+
     <main>
+        <!-- HERO -->
         <section id="hero">
             <div class="hero-content">
-                <h1>THE ONLY<br>
-                    <span>IMPOSSIBLE</span><br>
-                    JOURNEY IS<br>
-                    THE ONE YOU<br>
-                    <span>NEVER BEGIN.</span>
-                </h1>
+                <h1>THE ONLY<br><span>IMPOSSIBLE</span><br>JOURNEY IS<br>THE ONE YOU<br><span>NEVER BEGIN.</span></h1>
                 <button class="btn">BEGIN YOUR JOURNEY</button>
             </div>
         </section>
 
+        <!-- WHO WE ARE -->
         <section id="who-we-are">
             <div class="section-number">01</div>
             <div class="who-img"></div>
@@ -73,6 +97,7 @@
             </div>
         </section>
 
+        <!-- TEAM -->
         <section id="team">
             <div class="section-number">02</div>
             <h2 class="section-title">MEET THE TEAM</h2>
@@ -88,6 +113,7 @@
             </div>
         </section>
 
+        <!-- CLASSES -->
         <section id="classes">
             <div class="section-number">03</div>
             <h2 class="section-title">FEATURED CLASSES</h2>
@@ -103,6 +129,7 @@
             </div>
         </section>
 
+        <!-- MEMBERSHIPS -->
         <section id="memberships">
             <div class="section-number">04</div>
             <h2 class="section-title">MEMBERSHIPS</h2>
@@ -118,7 +145,6 @@
                     </ul>
                     <button class="btn">JOIN TODAY</button>
                 </div>
-
                 <div class="mem-card middle">
                     <h3>ALL ACCESS</h3>
                     <div class="icon-box"><i class="fas fa-history"></i></div>
@@ -130,7 +156,6 @@
                     </ul>
                     <button class="btn">JOIN TODAY</button>
                 </div>
-
                 <div class="mem-card">
                     <h3>OFF-PEAK</h3>
                     <div class="icon-box"><i class="fas fa-adjust"></i></div>
@@ -146,12 +171,12 @@
         </section>
     </main>
 
+    <!-- FOOTER -->
     <footer id="footer">
         <div class="footer-left">
             <div class="footer-info">
                 <p>hello@journeylondon.com</p>
-                <p>(+44) 0207 866 2974</p>
-                <br>
+                <p>(+44) 0207 866 2974</p><br>
                 <p>Studio 1A, 249 Chapel Street,</p>
                 <p>London, EC1 2AJ</p>
             </div>
@@ -171,6 +196,45 @@
         </div>
     </footer>
 
-</body>
+    <!-- Simple JavaScript for mobile menu -->
+    <script>
+        
+        (function () {
+            const menuToggle = document.getElementById('menuToggle');
+            const mobileNav = document.getElementById('mobileSideNav');
+            const overlay = document.getElementById('menuOverlay');
+            const closeBtn = document.getElementById('closeMenuBtn');
 
+            function openMenu() {
+                mobileNav.classList.add('open');
+                overlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeMenu() {
+                mobileNav.classList.remove('open');
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            if (menuToggle) menuToggle.addEventListener('click', openMenu);
+            if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+            if (overlay) overlay.addEventListener('click', closeMenu);
+            
+            const mobileLinks = document.querySelectorAll('.mobile-side-nav a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    closeMenu();                    
+                });
+            });
+          
+            window.addEventListener('resize', function () {
+                if (window.innerWidth > 768) {
+                    closeMenu();
+                }
+            });
+        })();
+
+    </script>
+</body>
 </html>
