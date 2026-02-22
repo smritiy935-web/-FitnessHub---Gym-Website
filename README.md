@@ -16,5 +16,8 @@ This project showcases gym services, trainers, membership plans, and contact sec
 - CSS3
 - JavaScript
 
+## 🚀 Live Demo
+https://smriti-fitnesshub.netlify.app/#
+
 ## 👩‍💻 Author
 Smriti Yadav
