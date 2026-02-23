@@ -647,23 +647,23 @@
 
         @media (max-width: 480px) {
             .section-title {
-                font-size: 1.8rem;
+                font-size: 4rem;
             }
 
             .hero-content h1 {
-                font-size: 2.2rem;
+                font-size: 4.2rem;
             }
 
             .btn {
                 padding: 10px 20px;
-                font-size: 0.9rem;
+                font-size: 2rem;
             }
         }
 
         /* foldable 280px */
         @media (max-width: 320px) {
             .logo {
-                font-size: 1.3rem;
+                font-size: 3rem;
             }
 
             .hero-content h1 {
